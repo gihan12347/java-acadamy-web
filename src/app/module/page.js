@@ -1,18 +1,12 @@
-import Header from "./component/header";
-import HeroSlideshow from "./component/hero-section";
-import LearningOverview from "./component/learning-and-overview";
-import FeaturedTutorials from "./component/features.js";
+import Header from "../component/header";
+import ModuleComponent from "../component/module-component";
 
-const JavaForBeginerApp = () => {
+export default function ModulePage({ searchParams }) {
   return (
     <div className="min-h-screen bg-white">
       <Header />
-      <div>
-        <HeroSlideshow />
-      </div>
       <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 space-y-8">
-        <LearningOverview />
-        <FeaturedTutorials />
+        <ModuleComponent searchParams={searchParams} />
       </main>
       <footer className="bg-white border-t border-gray-200 mt-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 text-center text-gray-600">
@@ -21,6 +15,4 @@ const JavaForBeginerApp = () => {
       </footer>
     </div>
   );
-};
-
-export default JavaForBeginerApp;
+}
