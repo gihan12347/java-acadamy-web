@@ -76,25 +76,57 @@ export const sections = [
   },
 
   {
-    id: "tomcat",
-    name: "Tomcat",
-    url: "/tomcat",
-    icon: Server,
+    id: "java-microservices",
+    name: "Java Microservices",
+    url: "/java-microservices",
+    icon: Layers,
     color: "from-red-500 to-red-600",
-    description: "Deploy and manage Java web applications",
+    description: "Build scalable, cloud-native microservices with Java",
     topics: [
-      { topic: "Introduction to Tomcat", url: "/tomcat-introduction" },
-      { topic: "Installing Tomcat", url: "/tomcat-installation" },
-      { topic: "Directory Structure", url: "/tomcat-directory-structure" },
       {
-        topic: "Deploying Applications",
-        url: "/tomcat-deploying-applications",
+        topic: "Introduction to Microservices Architecture",
+        url: "/microservices-introduction",
       },
-      { topic: "web.xml Configuration", url: "/tomcat-web-xml-config" },
-      { topic: "Context Configuration", url: "/tomcat-context-config" },
-      { topic: "Managing Server", url: "/tomcat-server-management" },
-      { topic: "Troubleshooting", url: "/tomcat-troubleshooting" },
-      { topic: "Performance Tuning", url: "/tomcat-performance-tuning" },
+      {
+        topic: "Monolith vs Microservices",
+        url: "/monolith-vs-microservices",
+      },
+      {
+        topic: "Spring Boot for Microservices",
+        url: "/spring-boot-microservices",
+      },
+      {
+        topic: "Service Discovery & Registration",
+        url: "/microservices-service-discovery",
+      },
+      {
+        topic: "API Gateway Pattern",
+        url: "/microservices-api-gateway",
+      },
+      {
+        topic: "Inter-Service Communication (REST, gRPC)",
+        url: "/microservices-communication",
+      },
+      {
+        topic: "Configuration Management",
+        url: "/microservices-config-management",
+      },
+      {
+        topic: "Fault Tolerance & Resilience",
+        url: "/microservices-resilience",
+      },
+      {
+        topic: "Docker & Kubernetes for Microservices",
+        url: "/microservices-docker-kubernetes",
+      },
+      {
+        topic: "Observability (Logging, Metrics, Tracing)",
+        url: "/microservices-observability",
+      },
+      {
+        topic: "Security in Microservices",
+        url: "/microservices-security",
+      },
     ],
   },
 
@@ -111,17 +143,20 @@ export const sections = [
         url: "/build-tools-introduction",
       },
       { topic: "Gradle Basics", url: "/gradle-basics" },
-      { topic: "build.gradle Configuration", url: "/gradle-build-file" },
-      { topic: "gradle lifecycle & tasks", url: "/gradle-life-cycle-and-tasks" },
+      { topic: "build.gradle structure", url: "/gradle-build-file" },
+      {
+        topic: "gradle lifecycle & tasks",
+        url: "/gradle-life-cycle-and-tasks",
+      },
       {
         topic: "Dependency Management",
         url: "/build-tools-dependency-management",
       },
-      { topic: "Building Projects", url: "/build-tools-building-projects" },
       { topic: "Creating JAR/WAR files", url: "/build-tools-jar-war" },
       { topic: "Maven Basics", url: "/maven-basics" },
       { topic: "pom.xml Structure", url: "/maven-pom-structure" },
       { topic: "Maven Dependencies", url: "/maven-dependencies" },
+      { topic: "Maven Lifecycle", url: "/maven-lifecycle" },
       { topic: "Maven Lifecycle", url: "/maven-lifecycle" },
     ],
   },

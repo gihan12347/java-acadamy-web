@@ -4,20 +4,8 @@ import {
   Copy,
   Check
 } from "lucide-react";
-import { useState } from "react";
+import { useCopyToClipboard } from "../util.js";
 
-// Placeholder for your imported hook
-const useCopyToClipboard = () => {
-  const [copiedCode, setCopiedCode] = useState(null);
-  const copyToClipboard = (text, id) => {
-    navigator.clipboard.writeText(text);
-    setCopiedCode(id);
-    setTimeout(() => setCopiedCode(null), 2000);
-  };
-  return { copiedCode, copyToClipboard };
-};
-
-// Placeholder code examples - replace with your actual imports
 const codeExamples = {
   concreteClassExample: `class Building {
     int floors;
