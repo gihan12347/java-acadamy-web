@@ -1,5 +1,6 @@
 import { Inter } from 'next/font/google'
 import './globals.css'
+import Script from 'next/script'
 
 const inter = Inter({ subsets: ['latin'], display: 'swap' })
 
@@ -10,7 +11,6 @@ export const metadata = {
   },
   description:
     'Learn Java programming online with step-by-step tutorials. From Core Java basics to advanced topics like Spring Boot and Microservices. Perfect for beginners and professionals in USA, Europe, Australia, and New Zealand.',
-
   metadataBase: new URL('https://javaacademyhub.com'),
 
   alternates: {
@@ -62,6 +62,22 @@ export default function RootLayout({ children }) {
         <link rel="alternate" href="https://javaacademyhub.com" hrefLang="en-au" />
         <link rel="alternate" href="https://javaacademyhub.com" hrefLang="en-nz" />
         <link rel="alternate" href="https://javaacademyhub.com" hrefLang="x-default" />
+
+        {/* Google Analytics */}
+        <Script
+          strategy="afterInteractive"
+          src="https://www.googletagmanager.com/gtag/js?id=G-NF4H6L1W9Y"
+        />
+        <Script id="google-analytics" strategy="afterInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'G-NF4H6L1W9Y', {
+              page_path: window.location.pathname,
+            });
+          `}
+        </Script>
       </head>
 
       <body className={inter.className}>
