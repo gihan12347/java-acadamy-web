@@ -8,6 +8,7 @@ const Header = () => {
   const [activeDropdown, setActiveDropdown] = useState(null);
 
   const toggleDropdown = (id) => {
+    console.log("Toggling dropdown for section ID:", id);
     setActiveDropdown(activeDropdown === id ? null : id);
   };
 

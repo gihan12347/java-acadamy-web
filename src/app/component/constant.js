@@ -20,8 +20,7 @@ export const sections = [
       { topic: "Access Modifiers", url: "/java-access-modifiers" },
       { topic: "Exception Handling", url: "/java-exception-handling" },
       { topic: "Multithreading", url: "/java-multithreading" },
-      { topic: "Collections Framework", url: "/java-collections-framework" },
-      { topic: "File I/O", url: "/java-file-io" },
+      { topic: "Collections Framework", url: "/java-collections-framework" }
     ],
   },
 
@@ -138,10 +137,8 @@ export const sections = [
       },
       { topic: "Creating JAR/WAR files", url: "/build-tools-jar-war" },
       { topic: "Maven Basics", url: "/maven-basics" },
-      { topic: "pom.xml Structure", url: "/maven-pom-structure" },
-      { topic: "Maven Dependencies", url: "/maven-dependencies" },
-      { topic: "Maven Lifecycle", url: "/maven-lifecycle" },
-      { topic: "Maven Lifecycle", url: "/maven-lifecycle" },
+      { topic: "Maven Lifecycle", url: "/maven-lifecycle" }
+      // { topic: "Maven Dependencies", url: "/maven-dependencies" }
     ],
   },
 
