@@ -46,7 +46,6 @@ export default function LeftPanel({ section, selectedTopicId = 0 }) {
           {section?.topics?.length ? (
             <ul className="space-y-2">
               {section.topics.map((topic, index) => {
-                console.log("topic ::", topic.topic);
 
                 const isSelected = index === localSelectedId;
 
