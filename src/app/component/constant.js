@@ -77,7 +77,7 @@ export const sections = [
 
   {
     id: "java-microservices",
-    name: "Java Microservices",
+    name: "Microservices",
     url: "/java-microservices",
     icon: Layers,
     color: "from-red-500 to-red-600",
@@ -96,32 +96,16 @@ export const sections = [
         url: "/spring-boot-microservices",
       },
       {
-        topic: "Service Discovery & Registration",
-        url: "/microservices-service-discovery",
+        topic: "Spring Cloud",
+        url: "/microservices-spring-cloud",
       },
       {
-        topic: "API Gateway Pattern",
-        url: "/microservices-api-gateway",
-      },
-      {
-        topic: "Inter-Service Communication (REST, gRPC)",
+        topic: "Inter-Service Communication",
         url: "/microservices-communication",
-      },
-      {
-        topic: "Configuration Management",
-        url: "/microservices-config-management",
-      },
-      {
-        topic: "Fault Tolerance & Resilience",
-        url: "/microservices-resilience",
       },
       {
         topic: "Docker & Kubernetes for Microservices",
         url: "/microservices-docker-kubernetes",
-      },
-      {
-        topic: "Observability (Logging, Metrics, Tracing)",
-        url: "/microservices-observability",
       },
       {
         topic: "Security in Microservices",

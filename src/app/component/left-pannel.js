@@ -10,6 +10,7 @@ export default function LeftPanel({ section, selectedTopicId = 0 }) {
       : selectedTopicId;
 
   const [localSelectedId, setLocalSelectedId] = useState(normalizedSelectedId);
+  const [hoveredIndex, setHoveredIndex] = useState(null);
   const router = useRouter();
 
   useEffect(() => {
@@ -23,7 +24,7 @@ export default function LeftPanel({ section, selectedTopicId = 0 }) {
   return (
     <div className="h-screen flex flex-col min-h-0">
 
-      <aside className="hidden md:flex flex-col w-80 lg:w-96 bg-white border-r-2 border-red-100 shadow-xl min-h-0">
+      <aside className="hidden md:flex flex-col w-72 bg-white border-r-2 border-red-100 shadow-xl min-h-0">
         {/* Header */}
         <div className="bg-gradient-to-r from-red-600 to-red-700 text-white p-5 md:p-6 shadow-lg">
           <div className="flex items-center gap-3 mb-2">
@@ -41,7 +42,7 @@ export default function LeftPanel({ section, selectedTopicId = 0 }) {
         </div>
 
         {/* Topics */}
-        <nav className="flex-1 min-h-0 overflow-y-auto p-5 bg-gray-50">
+        <nav className="flex-1 min-h-0 overflow-y-auto p-5 pb-20 bg-gray-50">
           {section?.topics?.length ? (
             <ul className="space-y-2">
               {section.topics.map((topic, index) => {
@@ -53,9 +54,11 @@ export default function LeftPanel({ section, selectedTopicId = 0 }) {
                   <li key={index}>
                     <button
                       onClick={() => handleTopicClick(topic.url)}
+                      onMouseEnter={() => setHoveredIndex(index)}
+                      onMouseLeave={() => setHoveredIndex(null)}
                       className={`
                         w-full text-left px-4 py-4 rounded-xl transition-all duration-200
-                        flex items-center justify-between group relative overflow-hidden
+                        flex items-center justify-between group relative
                         ${
                           isSelected
                             ? "bg-red-600 text-white shadow-lg shadow-red-200 scale-[1.02]"
@@ -77,7 +80,7 @@ export default function LeftPanel({ section, selectedTopicId = 0 }) {
                           {index + 1}
                         </div>
 
-                        <span className="font-medium text-sm md:text-base truncate">
+                        <span className="font-medium text-xs md:text-sm truncate group-hover:whitespace-normal group-hover:overflow-visible">
                           {topic.topic}
                         </span>
                       </div>
