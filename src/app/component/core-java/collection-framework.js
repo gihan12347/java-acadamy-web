@@ -2,174 +2,154 @@ export default function JavaCollectionFramework() {
   return (
     <div className="min-h-screen bg-white p-8">
       <div className="max-w-6xl mx-auto">
-        {/* Title */}
+
         <h1 className="text-4xl font-bold text-red-600 mb-8 text-center">
-          Java Collection Framework (JCF)
+          Java Collection Framework Tutorial (JCF) – Complete Guide with Examples
         </h1>
 
         {/* Introduction */}
         <section className="mb-8 border-l-4 border-red-600 pl-6">
           <p className="text-gray-800 mb-4">
-            The Java Collection Framework is a powerful set of classes and
-            interfaces that provide a standard way to store, manage, and
-            manipulate groups of objects in Java. It is part of the java.util
-            package and offers ready-to-use data structures and algorithms,
-            making development faster and more efficient.
+            The <strong>Java Collection Framework (JCF)</strong> is a core part of
+            Java that provides a unified architecture to store, manage, and
+            manipulate groups of objects. It is part of the{" "}
+            <strong>java.util</strong> package and includes interfaces, classes,
+            and algorithms to work efficiently with data structures in Java.
+          </p>
+          <p className="text-gray-800">
+            In this complete Java Collection Framework tutorial, you will learn
+            the hierarchy, core interfaces, implementations, and commonly used
+            algorithms with simple explanations for beginners and interview
+            preparation.
           </p>
         </section>
 
         {/* Why Use Collection Framework */}
         <section className="mb-8">
           <h2 className="text-2xl font-bold text-red-700 mb-6">
-            Why Use the Collection Framework?
+            Why Use Java Collection Framework?
           </h2>
           <ul className="list-disc list-inside space-y-2 text-gray-800 ml-4">
-            <li>Reduces development time with built-in data structures</li>
-            <li>Improves performance with optimized classes</li>
-            <li>
-              Provides consistent APIs across different types of collections
-            </li>
-            <li>Supports algorithms like sorting, searching, and shuffling</li>
-            <li>Enhances code reusability and readability</li>
+            <li>Reduces Java development time using ready-made data structures</li>
+            <li>Improves performance with optimized collection classes</li>
+            <li>Provides consistent APIs for List, Set, Queue, and Map</li>
+            <li>Supports built-in algorithms like sorting and searching</li>
+            <li>Makes Java code more reusable, readable, and maintainable</li>
           </ul>
         </section>
 
         {/* Hierarchy Section */}
         <section className="mb-8">
           <h2 className="text-2xl font-bold text-red-700 mb-6">
-            Hierarchy of the Collection Framework
+            Java Collection Framework Hierarchy
           </h2>
 
-          <div className="bg-white rounded-2xl p-10 mb-10  ">
+          <div className="bg-white rounded-2xl p-10 mb-10">
             <img
               src="/images/hierarchy-of-collection-framework-in-java.jpg"
-              alt="Control Flow Overview"
-              className="max-w-full h-auto mx-auto "
+              alt="Java Collection Framework hierarchy diagram showing List, Set, Queue, Map interfaces"
+              className="max-w-full h-auto mx-auto"
+              loading="lazy"
             />
           </div>
-          <h3 className="text-xl font-bold text-red-700 mb-4">1. Interfaces</h3>
-          <p className="text-gray-800 mb-6">
-            The backbone of the framework—defines abstract data types.
-          </p>
+
+          <h3 className="text-xl font-bold text-red-700 mb-4">
+            Core Interfaces in Java Collection Framework
+          </h3>
 
           {/* Collection */}
           <div className="mb-6 border-l-4 border-red-600 pl-6">
-            <h4 className="text-lg font-bold text-red-700 mb-3">Collection</h4>
-            <p className="text-gray-800">Root interface for most collections</p>
+            <h4 className="text-lg font-bold text-red-700 mb-3">
+              Collection Interface
+            </h4>
+            <p className="text-gray-800">
+              Root interface of the Java Collection Framework for List, Set, and Queue.
+            </p>
           </div>
 
           {/* List */}
           <div className="mb-6 border-l-4 border-red-600 pl-6">
-            <h4 className="text-lg font-bold text-red-700 mb-3">List</h4>
+            <h4 className="text-lg font-bold text-red-700 mb-3">
+              List Interface
+            </h4>
             <p className="text-gray-800">
-              Ordered collection allowing duplicate elements (ordered means
-              maintain insertion order)
+              Ordered collection that allows duplicate elements and maintains insertion order.
             </p>
           </div>
 
           {/* Set */}
           <div className="mb-6 border-l-4 border-red-600 pl-6">
-            <h4 className="text-lg font-bold text-red-700 mb-3">Set</h4>
+            <h4 className="text-lg font-bold text-red-700 mb-3">
+              Set Interface
+            </h4>
             <p className="text-gray-800 mb-2">
-              Unordered collection of unique elements
+              Collection that stores unique elements and does not allow duplicates.
             </p>
             <p className="text-gray-800 text-sm italic">
-              Note: Set has LinkedHashSet which still maintains unique elements
-              BUT maintains insertion order using a linked list internally. It
-              acts like a mix of HashSet (uniqueness + fast lookup) and Linked
-              list (keeps order).
+              LinkedHashSet maintains insertion order while keeping elements unique.
             </p>
-          </div>
-
-          {/* SortedSet / NavigableSet */}
-          <div className="mb-6 border-l-4 border-red-600 pl-6">
-            <h4 className="text-lg font-bold text-red-700 mb-3">
-              SortedSet / NavigableSet
-            </h4>
-            <p className="text-gray-800">Sorted versions of Set</p>
           </div>
 
           {/* Queue */}
           <div className="mb-6 border-l-4 border-red-600 pl-6">
-            <h4 className="text-lg font-bold text-red-700 mb-3">Queue</h4>
+            <h4 className="text-lg font-bold text-red-700 mb-3">
+              Queue Interface
+            </h4>
             <p className="text-gray-800">
-              For FIFO structures. FIFO means First In, First Out. The first
-              item added is the first one removed.
+              Used for FIFO (First In, First Out) data structures.
             </p>
           </div>
 
           {/* Deque */}
           <div className="mb-6 border-l-4 border-red-600 pl-6">
-            <h4 className="text-lg font-bold text-red-700 mb-3">Deque</h4>
+            <h4 className="text-lg font-bold text-red-700 mb-3">
+              Deque Interface
+            </h4>
             <p className="text-gray-800">
-              Double-ended queue. You can add or remove items from both the
-              front and the back. More flexible than a regular queue.
+              Double-ended queue that allows insertion and removal from both ends.
             </p>
           </div>
 
           {/* Map */}
           <div className="mb-6 border-l-4 border-red-600 pl-6">
-            <h4 className="text-lg font-bold text-red-700 mb-3">Map</h4>
-            <p className="text-gray-800">
-              Key-value based collections (not under Collection interface)
-            </p>
-          </div>
-
-          {/* SortedMap / NavigableMap */}
-          <div className="mb-6 border-l-4 border-red-600 pl-6">
             <h4 className="text-lg font-bold text-red-700 mb-3">
-              SortedMap / NavigableMap
+              Map Interface
             </h4>
-            <p className="text-gray-800">Sorted versions of Map</p>
+            <p className="text-gray-800">
+              Stores data as key-value pairs and is not a subtype of Collection.
+            </p>
           </div>
         </section>
 
-        {/* Core Implementations Links */}
-        <section className="mb-8  p-6 rounded-lg">
+        {/* Core Implementations */}
+        <section className="mb-8 p-6 rounded-lg">
           <h2 className="text-2xl font-bold text-red-700 mb-6 text-center">
-            Core Implementations
+            Core Java Collection Framework Implementations
           </h2>
+
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-            <a
-              href="/java-collections-framework/list"
-              className="block p-4 bg-white border-2 border-red-300 rounded-lg hover:bg-red-100 hover:border-red-500 transition-all duration-200"
-            >
-              <h3 className="text-lg font-bold text-red-700">
-                List Explanation
-              </h3>
+            <a href="/java-collections-framework/list" className="block p-4 bg-white border-2 border-red-300 rounded-lg hover:bg-red-100">
+              <h3 className="text-lg font-bold text-red-700">List Implementations</h3>
               <p className="text-gray-600 text-sm mt-1">
                 ArrayList, LinkedList, Vector
               </p>
             </a>
 
-            <a
-              href="/java-collections-framework/set"
-              className="block p-4 bg-white border-2 border-red-300 rounded-lg hover:bg-red-100 hover:border-red-500 transition-all duration-200"
-            >
-              <h3 className="text-lg font-bold text-red-700">
-                Set Exception
-              </h3>
+            <a href="/java-collections-framework/set" className="block p-4 bg-white border-2 border-red-300 rounded-lg hover:bg-red-100">
+              <h3 className="text-lg font-bold text-red-700">Set Implementations</h3>
               <p className="text-gray-600 text-sm mt-1">
                 HashSet, LinkedHashSet, TreeSet
               </p>
             </a>
 
-            <a
-              href="/java-collections-framework/map"
-              className="block p-4 bg-white border-2 border-red-300 rounded-lg hover:bg-red-100 hover:border-red-500 transition-all duration-200"
-            >
-              <h3 className="text-lg font-bold text-red-700">
-                Map Implementations
-              </h3>
+            <a href="/java-collections-framework/map" className="block p-4 bg-white border-2 border-red-300 rounded-lg hover:bg-red-100">
+              <h3 className="text-lg font-bold text-red-700">Map Implementations</h3>
               <p className="text-gray-600 text-sm mt-1">
                 HashMap, LinkedHashMap, TreeMap
               </p>
             </a>
 
-            <a
-              href="/java-collections-framework/queue"
-              className="block p-4 bg-white border-2 border-red-300 rounded-lg hover:bg-red-100 hover:border-red-500 transition-all duration-200"
-            >
+            <a href="/java-collections-framework/queue" className="block p-4 bg-white border-2 border-red-300 rounded-lg hover:bg-red-100">
               <h3 className="text-lg font-bold text-red-700">Queue & Deque</h3>
               <p className="text-gray-600 text-sm mt-1">
                 PriorityQueue, ArrayDeque, LinkedList
@@ -178,94 +158,55 @@ export default function JavaCollectionFramework() {
           </div>
         </section>
 
-        {/* Common Algorithms */}
+        {/* FAQ Section for */}
         <section className="mb-8">
           <h2 className="text-2xl font-bold text-red-700 mb-6">
-            Common Algorithms
+            Java Collection Framework – Frequently Asked Questions (FAQ)
           </h2>
-          <p className="text-gray-800 mb-6">
-            The Collections utility class provides helpful methods such as:
-          </p>
 
-          {/* 1. sort() */}
-          <div className="mb-6 border-l-4 border-red-600 pl-6">
-            <h3 className="text-xl font-bold text-red-700 mb-3">1. sort()</h3>
-            <p className="text-gray-800 mb-2">
-              Arranges the elements of a list in ascending order.
-            </p>
-            <p className="text-gray-600 italic">
-              Example: [3, 1, 2] becomes [1, 2, 3].
-            </p>
-          </div>
+          <div className="space-y-4">
+            <div>
+              <h3 className="font-bold text-red-700">
+                What is Java Collection Framework?
+              </h3>
+              <p className="text-gray-800">
+                Java Collection Framework is a set of interfaces and classes used to store and manipulate groups of objects in Java efficiently.
+              </p>
+            </div>
 
-          {/* 2. reverse() */}
-          <div className="mb-6 border-l-4 border-red-600 pl-6">
-            <h3 className="text-xl font-bold text-red-700 mb-3">
-              2. reverse()
-            </h3>
-            <p className="text-gray-800 mb-2">
-              Reverses the order of elements in a list.
-            </p>
-            <p className="text-gray-600 italic">
-              Example: [1, 2, 3] becomes [3, 2, 1].
-            </p>
-          </div>
+            <div>
+              <h3 className="font-bold text-red-700">
+                What are the main interfaces in JCF?
+              </h3>
+              <p className="text-gray-800">
+                The main interfaces are List, Set, Queue, Deque, and Map.
+              </p>
+            </div>
 
-          {/* 3. shuffle() */}
-          <div className="mb-6 border-l-4 border-red-600 pl-6">
-            <h3 className="text-xl font-bold text-red-700 mb-3">
-              3. shuffle()
-            </h3>
-            <p className="text-gray-800 mb-2">
-              Randomly mixes the elements in a list.
-            </p>
-            <p className="text-gray-600 italic">
-              Example: [1, 2, 3] might become [3, 1, 2].
-            </p>
-          </div>
-
-          {/* 4. binarySearch() */}
-          <div className="mb-6 border-l-4 border-red-600 pl-6">
-            <h3 className="text-xl font-bold text-red-700 mb-3">
-              4. binarySearch()
-            </h3>
-            <p className="text-gray-800 mb-2">
-              Searches for an element in a sorted list.
-            </p>
-            <ul className="list-disc list-inside space-y-1 text-gray-800 ml-4">
-              <li>Returns the index of the element if found</li>
-              <li>
-                Much faster than normal search, but the list must be sorted
-                first
-              </li>
-            </ul>
-          </div>
-
-          {/* 5. min() / max() */}
-          <div className="mb-6 border-l-4 border-red-600 pl-6">
-            <h3 className="text-xl font-bold text-red-700 mb-3">
-              5. min() / max()
-            </h3>
-            <ul className="list-disc list-inside space-y-1 text-gray-800 ml-4">
-              <li>min() returns the smallest element</li>
-              <li>max() returns the largest element</li>
-            </ul>
-          </div>
-
-          {/* 6. frequency() */}
-          <div className="mb-6 border-l-4 border-red-600 pl-6">
-            <h3 className="text-xl font-bold text-red-700 mb-3">
-              6. frequency()
-            </h3>
-            <p className="text-gray-800 mb-2">
-              Counts how many times a particular element appears in a
-              collection.
-            </p>
-            <p className="text-gray-600 italic">
-              Example: In [1, 2, 2, 3], the frequency of 2 is 2.
-            </p>
+            <div>
+              <h3 className="font-bold text-red-700">
+                What is the difference between List and Set in Java?
+              </h3>
+              <p className="text-gray-800">
+                List allows duplicate elements and maintains order, while Set stores only unique elements.
+              </p>
+            </div>
           </div>
         </section>
+
+        {/* Summary */}
+        <section className="mb-8 border-t pt-6">
+          <h2 className="text-2xl font-bold text-red-700 mb-4">
+            Summary: Java Collection Framework
+          </h2>
+          <p className="text-gray-800">
+            The Java Collection Framework is essential for every Java developer.
+            It provides powerful data structures, consistent APIs, and built-in
+            algorithms that make Java programming easier, faster, and more
+            efficient.
+          </p>
+        </section>
+
       </div>
     </div>
   );

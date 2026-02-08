@@ -1,9 +1,6 @@
 "use client";
 
-import {
-  Copy,
-  Check
-} from "lucide-react";
+import { Copy, Check } from "lucide-react";
 import { useCopyToClipboard } from "../util.js";
 
 const codeExamples = {
@@ -37,7 +34,7 @@ Building original = new Building(5, "Blue");
 Building cloned = (Building) original.clone();`,
   desenterlizationExample: `ObjectInputStream in = new ObjectInputStream(new FileInputStream("building.ser"));
 Building building = (Building) in.readObject();
-in.close();`
+in.close();`,
 };
 
 export default function JavaClassesObjects() {
@@ -54,18 +51,23 @@ export default function JavaClassesObjects() {
         {/* Introduction */}
         <section className="mb-6 sm:mb-8 p-4 sm:p-6">
           <p className="text-gray-800 mb-4 text-sm sm:text-base">
-            Classes and objects are the foundation of object-oriented
-            programming. They help to structure real-world entities in our code
-            base.
+            <strong>Classes and objects in Java</strong> are the foundation of
+            object-oriented programming (OOP). Every real-world Java application
+            is built using classes and objects, making this one of the most
+            important topics for Java beginners.
+          </p>
+          <p className="text-gray-800 mb-4 text-sm sm:text-base">
+            In this beginner-friendly tutorial, you will learn what a{" "}
+            <strong>Java class</strong> is, what a <strong>Java object</strong>{" "}
+            is, and how to create objects in multiple ways with simple
+            real-world examples.
           </p>
           <ul className="list-disc list-inside space-y-2 text-gray-800 ml-2 sm:ml-4 text-sm sm:text-base">
             <li>
-              <strong>Classes:</strong> Blueprint that creates objects. Shares
-              common properties of the object.
+              <strong>Class:</strong> A blueprint used to create objects.
             </li>
             <li>
-              <strong>Objects:</strong> Specific entity that is created from a
-              class.
+              <strong>Object:</strong> A real instance created from a class.
             </li>
           </ul>
         </section>
@@ -80,7 +82,9 @@ export default function JavaClassesObjects() {
             <p className="text-gray-800 font-semibold mb-2 text-sm sm:text-base">
               Class = Blueprint
             </p>
-            <p className="text-gray-800 mb-3 text-sm sm:text-base">A building blueprint defines:</p>
+            <p className="text-gray-800 mb-3 text-sm sm:text-base">
+              A building blueprint defines:
+            </p>
             <ul className="list-disc list-inside space-y-1 text-gray-800 ml-2 sm:ml-4 text-sm sm:text-base">
               <li>How many windows</li>
               <li>How many floors</li>
@@ -128,7 +132,12 @@ export default function JavaClassesObjects() {
               </div>
 
               <button
-                onClick={() => copyToClipboard(codeExamples.concreteClassExample, "concreteClassExample")}
+                onClick={() =>
+                  copyToClipboard(
+                    codeExamples.concreteClassExample,
+                    "concreteClassExample",
+                  )
+                }
                 className="flex items-center gap-1.5 sm:gap-2 px-3 sm:px-4 py-1.5 sm:py-2 bg-red-600 hover:bg-red-700 text-white  transition-colors duration-200"
               >
                 {copiedCode === "concreteClassExample" ? (
@@ -179,7 +188,9 @@ export default function JavaClassesObjects() {
               </div>
 
               <button
-                onClick={() => copyToClipboard(codeExamples.objectExample, "objectExample")}
+                onClick={() =>
+                  copyToClipboard(codeExamples.objectExample, "objectExample")
+                }
                 className="flex items-center gap-1.5 sm:gap-2 px-3 sm:px-4 py-1.5 sm:py-2 bg-red-600 hover:bg-red-700 text-white  transition-colors duration-200"
               >
                 {copiedCode === "objectExample" ? (
@@ -203,7 +214,9 @@ export default function JavaClassesObjects() {
             </pre>
           </div>
           <div className="p-3 sm:p-4 bg-gray-50 ">
-            <p className="text-gray-800 font-semibold mb-2 text-sm sm:text-base">Output:</p>
+            <p className="text-gray-800 font-semibold mb-2 text-sm sm:text-base">
+              Output:
+            </p>
             <code className="text-red-600 block text-xs sm:text-sm break-words">
               This building has 5 floors and is Blue.
             </code>
@@ -226,7 +239,9 @@ export default function JavaClassesObjects() {
               <h3 className="font-semibold text-red-700 mb-2 text-sm sm:text-base">
                 1. Using new keyword
               </h3>
-              <p className="text-gray-800 text-xs sm:text-sm">Most common way</p>
+              <p className="text-gray-800 text-xs sm:text-sm">
+                Most common way
+              </p>
             </div>
             <div className="p-3 sm:p-4  ">
               <h3 className="font-semibold text-red-700 mb-2 text-sm sm:text-base">
@@ -240,13 +255,17 @@ export default function JavaClassesObjects() {
               <h3 className="font-semibold text-red-700 mb-2 text-sm sm:text-base">
                 3. Using clone() method
               </h3>
-              <p className="text-gray-800 text-xs sm:text-sm">Copy existing objects</p>
+              <p className="text-gray-800 text-xs sm:text-sm">
+                Copy existing objects
+              </p>
             </div>
             <div className="p-3 sm:p-4  ">
               <h3 className="font-semibold text-red-700 mb-2 text-sm sm:text-base">
                 4. Using Deserialization
               </h3>
-              <p className="text-gray-800 text-xs sm:text-sm">Recreate from byte stream</p>
+              <p className="text-gray-800 text-xs sm:text-sm">
+                Recreate from byte stream
+              </p>
             </div>
           </div>
         </section>
@@ -273,12 +292,16 @@ export default function JavaClassesObjects() {
           </h2>
           <p className="text-gray-800 mb-4 text-sm sm:text-base">
             Create an object without using the{" "}
-            <code className="bg-white text-red-600 px-1.5 sm:px-2 py-0.5 sm:py-1 rounded text-xs sm:text-sm">new</code>{" "}
+            <code className="bg-white text-red-600 px-1.5 sm:px-2 py-0.5 sm:py-1 rounded text-xs sm:text-sm">
+              new
+            </code>{" "}
             keyword, by asking Java to create it at runtime using the class
             name.
           </p>
           <div className="p-3 sm:p-4 mb-4 bg-gray-50 ">
-            <p className="text-gray-800 font-semibold mb-2 text-sm sm:text-base">Useful for:</p>
+            <p className="text-gray-800 font-semibold mb-2 text-sm sm:text-base">
+              Useful for:
+            </p>
             <ul className="list-disc list-inside space-y-1 text-gray-800 ml-2 sm:ml-4 text-xs sm:text-sm">
               <li>Frameworks (Spring, Hibernate)</li>
               <li>Loading classes dynamically</li>
@@ -299,7 +322,12 @@ export default function JavaClassesObjects() {
               </div>
 
               <button
-                onClick={() => copyToClipboard(codeExamples.reflectionExample, "reflectionExample")}
+                onClick={() =>
+                  copyToClipboard(
+                    codeExamples.reflectionExample,
+                    "reflectionExample",
+                  )
+                }
                 className="flex items-center gap-1.5 sm:gap-2 px-3 sm:px-4 py-1.5 sm:py-2 bg-red-600 hover:bg-red-700 text-white  transition-colors duration-200"
               >
                 {copiedCode === "reflectionExample" ? (
@@ -323,7 +351,9 @@ export default function JavaClassesObjects() {
             </pre>
           </div>
           <div className="p-3 sm:p-4 bg-gray-50 ">
-            <p className="text-gray-800 font-semibold mb-2 text-sm sm:text-base">Explanation:</p>
+            <p className="text-gray-800 font-semibold mb-2 text-sm sm:text-base">
+              Explanation:
+            </p>
             <ul className="list-disc list-inside space-y-1 text-gray-800 ml-2 sm:ml-4 text-xs sm:text-sm">
               <li className="break-words">
                 <code className="text-red-600">Class.forName("Building")</code>{" "}
@@ -385,7 +415,12 @@ export default function JavaClassesObjects() {
               </div>
 
               <button
-                onClick={() => copyToClipboard(codeExamples.cloneObjectExample, "cloneObjectExample")}
+                onClick={() =>
+                  copyToClipboard(
+                    codeExamples.cloneObjectExample,
+                    "cloneObjectExample",
+                  )
+                }
                 className="flex items-center gap-1.5 sm:gap-2 px-3 sm:px-4 py-1.5 sm:py-2 bg-red-600 hover:bg-red-700 text-white  transition-colors duration-200"
               >
                 {copiedCode === "cloneObjectExample" ? (
@@ -409,9 +444,15 @@ export default function JavaClassesObjects() {
             </pre>
           </div>
           <div className="p-3 sm:p-4 bg-gray-50 ">
-            <p className="text-gray-800 font-semibold mb-2 text-sm sm:text-base">Output:</p>
-            <code className="text-red-600 block text-xs sm:text-sm">Original: 5, Blue</code>
-            <code className="text-red-600 block text-xs sm:text-sm">Clone: 5, Blue</code>
+            <p className="text-gray-800 font-semibold mb-2 text-sm sm:text-base">
+              Output:
+            </p>
+            <code className="text-red-600 block text-xs sm:text-sm">
+              Original: 5, Blue
+            </code>
+            <code className="text-red-600 block text-xs sm:text-sm">
+              Clone: 5, Blue
+            </code>
           </div>
         </section>
 
@@ -438,7 +479,12 @@ export default function JavaClassesObjects() {
               </div>
 
               <button
-                onClick={() => copyToClipboard(codeExamples.desenterlizationExample, "desenterlizationExample")}
+                onClick={() =>
+                  copyToClipboard(
+                    codeExamples.desenterlizationExample,
+                    "desenterlizationExample",
+                  )
+                }
                 className="flex items-center gap-1.5 sm:gap-2 px-3 sm:px-4 py-1.5 sm:py-2 bg-red-600 hover:bg-red-700 text-white  transition-colors duration-200"
               >
                 {copiedCode === "desenterlizationExample" ? (
@@ -462,17 +508,21 @@ export default function JavaClassesObjects() {
             </pre>
           </div>
           <div className="p-3 sm:p-4 bg-gray-50 ">
-            <p className="text-gray-800 font-semibold mb-2 text-sm sm:text-base">Output:</p>
-            <code className="text-red-600 text-xs sm:text-sm">Building with 5 floors</code>
+            <p className="text-gray-800 font-semibold mb-2 text-sm sm:text-base">
+              Output:
+            </p>
+            <code className="text-red-600 text-xs sm:text-sm">
+              Building with 5 floors
+            </code>
           </div>
         </section>
 
-        {/* Summary */}       
-<section className="p-4 sm:p-6">
+        {/* Summary */}
+        <section className="p-4 sm:p-6">
           <h2 className="text-xl sm:text-2xl font-bold text-red-700 mb-4 text-center">
             Summary
           </h2>
-          
+
           {/* Desktop Table View */}
           <div className="hidden md:block overflow-x-auto">
             <table className="w-full border-collapse border-2 border-red-300">
@@ -546,11 +596,15 @@ export default function JavaClassesObjects() {
               </div>
               <div className="p-4 space-y-2">
                 <div>
-                  <span className="text-red-700 font-semibold text-sm">When to Use:</span>
+                  <span className="text-red-700 font-semibold text-sm">
+                    When to Use:
+                  </span>
                   <p className="text-gray-700">Standard object creation</p>
                 </div>
                 <div>
-                  <span className="text-red-700 font-semibold text-sm">Key Feature:</span>
+                  <span className="text-red-700 font-semibold text-sm">
+                    Key Feature:
+                  </span>
                   <p className="text-gray-700">Most common way</p>
                 </div>
               </div>
@@ -562,11 +616,15 @@ export default function JavaClassesObjects() {
               </div>
               <div className="p-4 space-y-2">
                 <div>
-                  <span className="text-red-700 font-semibold text-sm">When to Use:</span>
+                  <span className="text-red-700 font-semibold text-sm">
+                    When to Use:
+                  </span>
                   <p className="text-gray-700">Frameworks, dynamic loading</p>
                 </div>
                 <div>
-                  <span className="text-red-700 font-semibold text-sm">Key Feature:</span>
+                  <span className="text-red-700 font-semibold text-sm">
+                    Key Feature:
+                  </span>
                   <p className="text-gray-700">Runtime class loading</p>
                 </div>
               </div>
@@ -578,11 +636,15 @@ export default function JavaClassesObjects() {
               </div>
               <div className="p-4 space-y-2">
                 <div>
-                  <span className="text-red-700 font-semibold text-sm">When to Use:</span>
+                  <span className="text-red-700 font-semibold text-sm">
+                    When to Use:
+                  </span>
                   <p className="text-gray-700">Copying existing objects</p>
                 </div>
                 <div>
-                  <span className="text-red-700 font-semibold text-sm">Key Feature:</span>
+                  <span className="text-red-700 font-semibold text-sm">
+                    Key Feature:
+                  </span>
                   <p className="text-gray-700">Creates duplicate</p>
                 </div>
               </div>
@@ -594,16 +656,58 @@ export default function JavaClassesObjects() {
               </div>
               <div className="p-4 space-y-2">
                 <div>
-                  <span className="text-red-700 font-semibold text-sm">When to Use:</span>
+                  <span className="text-red-700 font-semibold text-sm">
+                    When to Use:
+                  </span>
                   <p className="text-gray-700">Loading saved objects</p>
                 </div>
                 <div>
-                  <span className="text-red-700 font-semibold text-sm">Key Feature:</span>
+                  <span className="text-red-700 font-semibold text-sm">
+                    Key Feature:
+                  </span>
                   <p className="text-gray-700">From byte stream</p>
                 </div>
               </div>
             </div>
           </div>
+        </section>
+
+        <section className="mt-12 border-t-2 border-red-300 pt-8">
+          <h2 className="text-2xl font-bold text-red-700 mb-6 text-center">
+            Classes and Objects in Java – FAQ for Beginners
+          </h2>
+
+          <h3 className="text-lg font-semibold text-red-700 mb-2">
+            What is a class in Java?
+          </h3>
+          <p className="text-gray-800 mb-4">
+            A class in Java is a blueprint or template used to create objects.
+            It defines properties (variables) and behaviors (methods).
+          </p>
+
+          <h3 className="text-lg font-semibold text-red-700 mb-2">
+            What is an object in Java?
+          </h3>
+          <p className="text-gray-800 mb-4">
+            An object is a real instance of a class. It represents a real-world
+            entity created from the class blueprint.
+          </p>
+
+          <h3 className="text-lg font-semibold text-red-700 mb-2">
+            What is the difference between class and object in Java?
+          </h3>
+          <p className="text-gray-800 mb-4">
+            A class is a blueprint, while an object is a real instance created
+            from that blueprint.
+          </p>
+
+          <h3 className="text-lg font-semibold text-red-700 mb-2">
+            How many ways can we create objects in Java?
+          </h3>
+          <p className="text-gray-800">
+            Objects in Java can be created using the new keyword, reflection,
+            clone() method, and deserialization.
+          </p>
         </section>
       </div>
     </div>
