@@ -89,10 +89,10 @@ const HeroSlideshow = () => {
           {/* Right Side - Content */}
           <div className="order-1 lg:order-2 text-center lg:text-left">
             <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white mb-3 sm:mb-4 leading-tight">
-              Welcome to Java Beginners' Hub!
+              Java Tutorial for Beginners
             </h1>
             <p className="text-base sm:text-lg lg:text-xl text-white/95 mb-3 sm:mb-4">
-              Learn Java step-by-step — from Core Java to Web Development.
+              Learn Java step-by-step - from Core Java to Web Development.
             </p>
             <p className="text-sm sm:text-base lg:text-lg text-white/90 max-w-2xl mx-auto lg:mx-0">
               Start your journey with easy tutorials, code examples, and projects.
