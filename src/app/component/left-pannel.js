@@ -22,16 +22,16 @@ export default function LeftPanel({ section, selectedTopicId = 0 }) {
   };
 
   return (
-    <div className="h-screen flex flex-col min-h-0">
+    <div className="h-full flex flex-col min-h-0">
 
-      <aside className="hidden md:flex flex-col w-72 bg-white border-r-2 border-red-100 shadow-xl min-h-0">
+      <aside className="hidden md:flex flex-col w-64 lg:w-72 bg-white border-r border-red-100 shadow-xl min-h-0">
         {/* Header */}
-        <div className="bg-gradient-to-r from-red-600 to-red-700 text-white p-5 md:p-6 shadow-lg">
+        <div className="bg-gradient-to-r from-red-600 to-red-700 text-white p-4 md:p-6 shadow-lg">
           <div className="flex items-center gap-3 mb-2">
             <div className="bg-white bg-opacity-20 p-2 rounded-lg">
               <BookOpen size={24} className="text-white" />
             </div>
-            <h2 className="text-xl md:text-2xl font-bold">
+            <h2 className="text-lg md:text-2xl font-bold">
               {section?.name || "Topics"}
             </h2>
           </div>
@@ -42,7 +42,7 @@ export default function LeftPanel({ section, selectedTopicId = 0 }) {
         </div>
 
         {/* Topics */}
-        <nav className="flex-1 min-h-0 overflow-y-auto p-5 pb-20 bg-gray-50">
+        <nav className="flex-1 min-h-0 overflow-y-auto p-4 lg:p-5 pb-20 bg-gray-50">
           {section?.topics?.length ? (
             <ul className="space-y-2">
               {section.topics.map((topic, index) => {
@@ -56,7 +56,7 @@ export default function LeftPanel({ section, selectedTopicId = 0 }) {
                       onMouseEnter={() => setHoveredIndex(index)}
                       onMouseLeave={() => setHoveredIndex(null)}
                       className={`
-                        w-full text-left px-4 py-4 rounded-xl transition-all duration-200
+                        w-full text-left px-3.5 lg:px-4 py-3.5 lg:py-4 rounded-xl transition-all duration-200
                         flex items-center justify-between group relative
                         ${
                           isSelected
@@ -65,10 +65,10 @@ export default function LeftPanel({ section, selectedTopicId = 0 }) {
                         }
                       `}
                     >
-                      <div className="flex items-center gap-3 flex-1 min-w-0">
+                      <div className="flex items-center gap-2.5 lg:gap-3 flex-1 min-w-0">
                         <div
                           className={`
-                            flex-shrink-0 w-8 h-8 rounded-lg flex items-center justify-center text-xs font-bold
+                            flex-shrink-0 w-7 h-7 lg:w-8 lg:h-8 rounded-lg flex items-center justify-center text-xs font-bold
                             ${
                               isSelected
                                 ? "bg-white bg-opacity-20 text-white"

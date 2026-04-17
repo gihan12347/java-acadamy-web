@@ -36,19 +36,19 @@ export default function ModuleComponent({ searchParams }) {
   }
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-50 to-gray-100 py-8 px-4 sm:px-6 lg:px-8">
+    <section className="min-h-screen bg-gradient-to-br from-slate-50 to-gray-100 py-6 sm:py-8">
       <div className="max-w-6xl mx-auto">
         {/* Header Section */}
-        <div className="bg-white rounded-3xl shadow-xl p-8 sm:p-10 lg:p-12 mb-8 overflow-hidden relative">
+        <div className="bg-white rounded-2xl sm:rounded-3xl shadow-xl p-5 sm:p-8 lg:p-12 mb-8 overflow-hidden relative border border-slate-100">
           {/* Background Pattern */}
           <div className="absolute top-0 right-0 w-64 h-64 bg-gradient-to-br from-red-100 to-transparent rounded-full blur-3xl opacity-30"></div>
 
           <div className="relative">
-            <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-6 mb-6">
+            <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-5 sm:gap-6 mb-5 sm:mb-6">
               <div className="flex items-start gap-4 flex-1">
-                <div className="w-16 h-16 sm:w-20 sm:h-20 bg-gradient-to-br from-red-500 to-red-600 rounded-2xl flex items-center justify-center shadow-lg flex-shrink-0">
+                <div className="w-14 h-14 sm:w-20 sm:h-20 bg-gradient-to-br from-red-500 to-red-600 rounded-2xl flex items-center justify-center shadow-lg flex-shrink-0">
                   <svg
-                    className="w-8 h-8 sm:w-10 sm:h-10 text-white"
+                    className="w-7 h-7 sm:w-10 sm:h-10 text-white"
                     fill="none"
                     stroke="currentColor"
                     viewBox="0 0 24 24"
@@ -62,7 +62,7 @@ export default function ModuleComponent({ searchParams }) {
                   </svg>
                 </div>
                 <div className="flex-1">
-                  <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900 mb-3">
+                  <h1 className="text-2xl sm:text-4xl lg:text-5xl font-bold text-gray-900 mb-3">
                     {section.name}
                   </h1>
                   <div className="h-1.5 w-24 bg-gradient-to-r from-red-500 to-red-600 rounded-full"></div>
@@ -93,7 +93,7 @@ export default function ModuleComponent({ searchParams }) {
               </div>
             </div>
 
-            <p className="text-base sm:text-lg text-gray-600 leading-relaxed mb-6">
+            <p className="text-sm sm:text-base lg:text-lg text-gray-600 leading-relaxed mb-6">
               {section.description}
             </p>
 
@@ -117,7 +117,7 @@ export default function ModuleComponent({ searchParams }) {
 
             {/* Start Learning Button - Mobile */}
             <div className="sm:hidden mt-6">
-              <button className="w-full bg-gradient-to-r from-red-500 to-red-600 text-white px-6 py-3 rounded-xl font-semibold shadow-lg flex items-center justify-center gap-2">
+              <button className="w-full bg-gradient-to-r from-red-500 to-red-600 text-white px-6 py-3 rounded-xl font-semibold shadow-lg flex items-center justify-center gap-2 active:scale-[0.99]">
                 <span>Start Learning</span>
                 <svg
                   className="w-5 h-5"
@@ -151,14 +151,14 @@ export default function ModuleComponent({ searchParams }) {
               <Link key={index} href={topic.url}>
                 <div
                   key={index}
-                  className="bg-white rounded-xl p-5 shadow-sm border border-gray-200"
+                  className="bg-white rounded-xl p-4 sm:p-5 shadow-sm border border-gray-200 hover:border-red-200 hover:shadow-md transition-all"
                 >
                   <div className="flex items-start gap-4">
-                    <div className="flex-shrink-0 w-10 h-10 bg-gray-100 text-gray-700 rounded-lg flex items-center justify-center font-semibold">
+                    <div className="flex-shrink-0 w-9 h-9 sm:w-10 sm:h-10 bg-gray-100 text-gray-700 rounded-lg flex items-center justify-center font-semibold">
                       {index + 1}
                     </div>
                     <div className="flex-1 pt-1">
-                      <p className="text-gray-800 text-base sm:text-lg font-medium leading-relaxed">
+                      <p className="text-gray-800 text-sm sm:text-base lg:text-lg font-medium leading-relaxed">
                         {topic.topic}
                       </p>
                     </div>
@@ -169,6 +169,6 @@ export default function ModuleComponent({ searchParams }) {
           </div>
         </div>
       </div>
-    </div>
+    </section>
   );
 }

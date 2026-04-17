@@ -3,35 +3,64 @@ import './globals.css'
 import Script from 'next/script'
 
 const inter = Inter({ subsets: ['latin'], display: 'swap' })
+const siteUrl = 'https://javaacademyhub.com'
+const defaultTitle = 'Java Academy Hub | Learn Java Programming Online'
+const defaultDescription =
+  'Learn Java programming online with step-by-step tutorials for learners in the USA, Europe, and Australia. Master Core Java, OOP, Spring Boot, and Microservices with practical examples.'
 
 export const metadata = {
   title: {
-    default: 'Java Academy Hub | Learn Java Programming Online',
+    default: defaultTitle,
     template: '%s | Java Academy Hub',
   },
-  description:
-    'Learn Java programming online with step-by-step tutorials. From Core Java basics to advanced topics like Spring Boot and Microservices. Perfect for beginners and professionals in USA, Europe, Australia, and New Zealand.',
-  metadataBase: new URL('https://javaacademyhub.com'),
+  applicationName: 'Java Academy Hub',
+  description: defaultDescription,
+  metadataBase: new URL(siteUrl),
+  keywords: [
+    'learn java online',
+    'java tutorials for beginners',
+    'core java tutorial',
+    'spring boot tutorial',
+    'microservices java',
+    'java course usa',
+    'java course europe',
+    'java course australia',
+  ],
+  category: 'education',
 
   alternates: {
     canonical: '/',
+    languages: {
+      'en-US': '/',
+      'en-GB': '/',
+      'en-AU': '/',
+      'x-default': '/',
+    },
   },
 
   openGraph: {
-    title: 'Java Academy Hub | Learn Java Programming Online',
-    description:
-      'Master Java programming with easy-to-follow lessons. Covers Core Java, OOP, Spring Boot, and Microservices. Trusted by learners worldwide.',
-    url: 'https://javaacademyhub.com',
+    title: defaultTitle,
+    description: defaultDescription,
+    url: siteUrl,
     siteName: 'Java Academy Hub',
     locale: 'en_US',
+    localeAlternate: ['en_GB', 'en_AU'],
     type: 'website',
+    images: [
+      {
+        url: '/images/logo.png',
+        width: 512,
+        height: 512,
+        alt: 'Java Academy Hub',
+      },
+    ],
   },
 
   twitter: {
     card: 'summary_large_image',
-    title: 'Java Academy Hub | Learn Java Programming Online',
-    description:
-      'Learn Java online with structured tutorials. From beginner to advanced Java, Spring Boot & Microservices.',
+    title: defaultTitle,
+    description: defaultDescription,
+    images: ['/images/logo.png'],
   },
 
   robots: {
@@ -45,23 +74,62 @@ export const metadata = {
       'max-snippet': -1,
     },
   },
+  other: {
+    'content-language': 'en-US, en-GB, en-AU',
+  },
 }
 
 export default function RootLayout({ children }) {
+  const websiteSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'WebSite',
+    name: 'Java Academy Hub',
+    url: siteUrl,
+    description: defaultDescription,
+    inLanguage: ['en-US', 'en-GB', 'en-AU'],
+    audience: {
+      '@type': 'EducationalAudience',
+      educationalRole: 'student',
+    },
+  }
+
+  const organizationSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'Organization',
+    name: 'Java Academy Hub',
+    url: siteUrl,
+    logo: `${siteUrl}/images/logo.png`,
+    areaServed: ['US', 'GB', 'AU'],
+    knowsAbout: ['Java Programming', 'Spring Boot', 'Microservices'],
+  }
+
   return (
     <html lang="en">
       <head>
         {/* Geo + Language Signals */}
         <meta name="language" content="English" />
-        <meta name="geo.region" content="US" />
-        <meta name="geo.placename" content="United States" />
+        <meta httpEquiv="content-language" content="en-US, en-GB, en-AU" />
+        <meta name="distribution" content="global" />
 
         {/* Optional: International Targeting */}
         <link rel="alternate" href="https://javaacademyhub.com" hrefLang="en-us" />
         <link rel="alternate" href="https://javaacademyhub.com" hrefLang="en-gb" />
         <link rel="alternate" href="https://javaacademyhub.com" hrefLang="en-au" />
-        <link rel="alternate" href="https://javaacademyhub.com" hrefLang="en-nz" />
         <link rel="alternate" href="https://javaacademyhub.com" hrefLang="x-default" />
+
+        {/* Structured Data */}
+        <Script
+          id="website-schema"
+          type="application/ld+json"
+          strategy="beforeInteractive"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteSchema) }}
+        />
+        <Script
+          id="organization-schema"
+          type="application/ld+json"
+          strategy="beforeInteractive"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationSchema) }}
+        />
 
         {/* Google Analytics */}
         <Script

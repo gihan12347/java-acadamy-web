@@ -5,12 +5,12 @@ import Link from "next/link";
 
 const LearningOverview = () => {
   return (
-    <div className="bg-white">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+    <section className="bg-white">
+      <div className="app-shell py-8 sm:py-10 lg:py-12">
         {/* Hero Section */}
-        <div className="text-center mb-12">
+        <div className="text-center mb-10 sm:mb-12">
           {/* Badge */}
-          <div className="inline-flex items-center gap-2 bg-gray-50 px-6 py-3 rounded-full shadow-lg border-2 border-red-200 mb-6">
+          <div className="inline-flex items-center gap-2 bg-gray-50 px-4 sm:px-6 py-2.5 sm:py-3 rounded-full shadow-md border border-red-200 mb-6">
             <img
               src="/images/logo.png"
               alt="Java Icon"
@@ -22,7 +22,7 @@ const LearningOverview = () => {
           </div>
 
           {/* Main Title */}
-          <h1 className="text-6xl font-black text-gray-900 mb-6 leading-tight">
+          <h1 className="text-3xl sm:text-5xl lg:text-6xl font-black text-gray-900 mb-4 sm:mb-6 leading-tight">
             Learn{" "}
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-red-500 to-red-600">
               Java
@@ -34,15 +34,15 @@ const LearningOverview = () => {
           </h1>
 
           {/* Subtitle */}
-          <p className="text-2xl text-gray-600 max-w-3xl mx-auto font-medium">
+          <p className="text-base sm:text-xl lg:text-2xl text-gray-600 max-w-3xl mx-auto font-medium leading-relaxed">
             A comprehensive guide for beginners covering everything from Core
             Java to building enterprise applications
           </p>
         </div>
 
         {/* Learning Cards */}
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-8">
-          {sections.map((section, index) => {
+        <div className="grid sm:grid-cols-2 xl:grid-cols-3 gap-5 sm:gap-6 lg:gap-8 mb-8">
+          {sections.map((section) => {
             const Icon = section.icon;
             // Since we are applying a single theme, we use the red colors consistently
             const isRed = true;
@@ -51,7 +51,7 @@ const LearningOverview = () => {
               <div
                 key={section.id}
                 // Border and hover effects are red
-                className={`group relative bg-white rounded-3xl p-8 shadow-xl border-4 hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 cursor-pointer ${
+                className={`group relative h-full bg-white rounded-3xl p-6 sm:p-7 shadow-lg border-2 hover:shadow-2xl hover:-translate-y-1.5 transition-all duration-300 cursor-pointer ${
                   isRed
                     ? "border-red-200 hover:border-red-400"
                     : "border-gray-200 hover:border-gray-400"
@@ -60,22 +60,22 @@ const LearningOverview = () => {
                 {/* Icon */}
                 <div
                   // Icon background gradient is red
-                  className={`w-20 h-20 rounded-2xl flex items-center justify-center mb-6 shadow-lg group-hover:scale-110 transition-transform ${
+                  className={`w-14 h-14 sm:w-16 sm:h-16 rounded-2xl flex items-center justify-center mb-5 shadow-md group-hover:scale-105 transition-transform ${
                     isRed
                       ? "bg-gradient-to-br from-red-500 to-red-700"
                       : "bg-gradient-to-br from-gray-500 to-gray-700"
                   }`}
                 >
-                  <Icon className="w-10 h-10 text-white" strokeWidth={2.5} />
+                  <Icon className="w-7 h-7 sm:w-8 sm:h-8 text-white" strokeWidth={2.5} />
                 </div>
 
                 {/* Title */}
-                <h3 className="text-2xl font-bold text-gray-900 mb-4">
+                <h3 className="text-xl sm:text-2xl font-bold text-gray-900 mb-3">
                   {section.name}
                 </h3>
 
                 {/* Description */}
-                <p className="text-gray-600 text-base leading-relaxed mb-6">
+                <p className="text-gray-600 text-sm sm:text-base leading-relaxed mb-6 min-h-[72px] sm:min-h-[96px]">
                   {section.description}
                 </p>
 
@@ -92,7 +92,7 @@ const LearningOverview = () => {
                     </span>
                     <div
                       // Chevron background is light red
-                      className={`w-12 h-12 rounded-full flex items-center justify-center group-hover:scale-110 transition-transform ${
+                      className={`w-10 h-10 sm:w-12 sm:h-12 rounded-full flex items-center justify-center group-hover:scale-110 transition-transform ${
                         isRed
                           ? "bg-red-100 group-hover:bg-red-200"
                           : "bg-gray-100 group-hover:bg-gray-200"
@@ -113,7 +113,7 @@ const LearningOverview = () => {
           })}
         </div>
       </div>
-    </div>
+    </section>
   );
 };
 

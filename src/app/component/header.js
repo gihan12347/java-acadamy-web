@@ -8,33 +8,32 @@ const Header = () => {
   const [activeDropdown, setActiveDropdown] = useState(null);
 
   const toggleDropdown = (id) => {
-    console.log("Toggling dropdown for section ID:", id);
     setActiveDropdown(activeDropdown === id ? null : id);
   };
 
   // Define Red Color Palette for consistency
   const COLOR_PRIMARY_GRADIENT = 'from-red-600 to-red-700';
-  const COLOR_LIGHT_GRADIENT = 'from-red-50/80 via-white/80 to-red-50/80';
+  const COLOR_LIGHT_GRADIENT = 'from-red-50/90 via-white/95 to-red-50/90';
   const COLOR_TEXT_ACTIVE = 'text-red-600';
   const COLOR_BG_ACTIVE = 'bg-gradient-to-r from-red-50 to-red-100';
   const COLOR_RING = 'ring-red-300';
   const COLOR_HOVER_BG = 'hover:bg-red-50';
 
   return (
-    <header className={`${COLOR_LIGHT_GRADIENT} backdrop-blur-lg shadow-lg sticky top-0 z-50 border-b border-red-200/30`}>
+    <header className={`${COLOR_LIGHT_GRADIENT} bg-gradient-to-r backdrop-blur-xl shadow-sm sticky top-0 z-50 border-b border-red-100/70`}>
       {/* Main Header */}
-      <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-between py-4 gap-4">
+      <div className="app-shell w-full">
+        <div className="flex items-center justify-between py-3 sm:py-4 gap-3 sm:gap-4">
           {/* Logo and Brand - Horizontal Layout for Better Space Usage */}
-          <a href="/" className="flex items-center gap-3 group flex-shrink-0">
+          <a href="/" className="flex items-center gap-2.5 sm:gap-3 group flex-shrink-0">
             <div className="relative">
               {/* Circular glow effect (Red) */}
               <div className={`absolute inset-0 bg-gradient-to-br ${COLOR_PRIMARY_GRADIENT} rounded-full blur-md opacity-50 group-hover:opacity-75 transition-opacity`}></div>
               {/* Circular logo container (Red Ring) */}
-              <div className={`relative w-12 h-12 sm:w-14 sm:h-14 rounded-full bg-white flex items-center justify-center shadow-lg transform group-hover:scale-105 transition-transform overflow-hidden ring-4 ${COLOR_RING} group-hover:ring-red-400`}>
+              <div className={`relative w-11 h-11 sm:w-12 sm:h-12 md:w-14 md:h-14 rounded-full bg-white flex items-center justify-center shadow-lg transform group-hover:scale-105 transition-transform overflow-hidden ring-4 ${COLOR_RING} group-hover:ring-red-400`}>
                 {/* Replace the src below with your actual logo path */}
                 <img 
-                  src="images/logo.png" 
+                  src="/images/logo.png" 
                   alt="Java Academy Logo" 
                   className="w-full h-full object-contain p-1"
                   onError={(e) => {
@@ -53,18 +52,18 @@ const Header = () => {
               </div>
             </div>
             
-            <div className="hidden sm:block">
-              <h1 className="text-xl md:text-2xl font-bold text-gray-800 leading-tight">
+            <div className="block">
+              <p className="text-lg sm:text-xl md:text-2xl font-bold text-gray-800 leading-tight">
                 {/* Brand Name (Red Accent) */}
                 <span className={`bg-gradient-to-r ${COLOR_PRIMARY_GRADIENT} bg-clip-text text-transparent`}>Java</span>
                 <span className="text-gray-700"> Academy</span>
-              </h1>
-              <p className="text-xs text-gray-500 font-medium">Master Java Development</p>
+              </p>
+              <p className="hidden sm:block text-xs text-gray-500 font-medium">Master Java Development</p>
             </div>
           </a>
 
           {/* Desktop Navigation */}
-          <nav className="hidden lg:flex items-center gap-2 flex-1 justify-end">
+          <nav className="hidden lg:flex items-center gap-1 xl:gap-2 flex-1 justify-end">
             {sections.map((section) => {
               const Icon = section.icon;
               const isActive = activeDropdown === section.id;
@@ -88,7 +87,7 @@ const Header = () => {
                   {/* Dropdown Menu */}
                   {isActive && (
                     <div 
-                      className={`absolute mt-2 w-[600px] bg-white rounded-2xl shadow-2xl border border-gray-100 overflow-hidden animate-in fade-in slide-in-from-top-2 duration-200 ${
+                      className={`absolute mt-2 w-[min(92vw,620px)] bg-white rounded-2xl shadow-2xl border border-gray-100 overflow-hidden animate-in fade-in slide-in-from-top-2 duration-200 ${
                         section.id === 'apis' || section.id === 'build-tools' ? 'left-auto right-0' : 'left-1/2 -translate-x-1/2'
                       }`}
                       onMouseLeave={() => setActiveDropdown(null)}
@@ -111,18 +110,18 @@ const Header = () => {
                       </div>
                       
                       {/* Topics List */}
-                      <div className="max-h-[calc(100vh-200px)] overflow-y-auto p-2 grid grid-cols-2 gap-1">
+                      <div className="max-h-[calc(100vh-200px)] overflow-y-auto p-2 grid grid-cols-1 sm:grid-cols-2 gap-1">
                         {section.topics.map((topic, idx) => (
                           <a
                             key={idx}
                             href={topic.url}
-                            className={`flex items-start gap-2 px-2 py-2.5 text-gray-700 hover:bg-gradient-to-r hover:from-red-50 hover:to-transparent rounded-xl transition-all group my-1`}
+                            className="flex items-start gap-2 px-2 py-2.5 text-gray-700 hover:bg-gradient-to-r hover:from-red-50 hover:to-transparent rounded-xl transition-all group my-1"
                           >
                             {/* Topic Index Circle (Red) */}
-                            <span className={`w-6 h-6 flex items-center justify-center rounded-lg bg-gray-100 text-xs font-bold text-gray-500 group-hover:bg-gradient-to-br group-hover:${COLOR_PRIMARY_GRADIENT} group-hover:text-white transition-all flex-shrink-0 shadow-sm`}>
+                            <span className="w-6 h-6 flex items-center justify-center rounded-lg bg-gray-100 text-xs font-bold text-gray-500 group-hover:bg-gradient-to-br group-hover:from-red-600 group-hover:to-red-700 group-hover:text-white transition-all flex-shrink-0 shadow-sm">
                               {idx + 1}
                             </span>
-                            <span className={`text-xs font-medium group-hover:${COLOR_TEXT_ACTIVE} transition-colors leading-tight`}>{topic.topic}</span>
+                            <span className="text-xs font-medium group-hover:text-red-600 transition-colors leading-tight">{topic.topic}</span>
                           </a>
                         ))}
                       </div>
@@ -147,17 +146,17 @@ const Header = () => {
       {/* Mobile & Tablet Menu */}
       {mobileMenuOpen && (
         <div className="lg:hidden border-t border-gray-200/50 bg-white/95 backdrop-blur-lg animate-in slide-in-from-top duration-200">
-          <div className="w-full px-4 py-4 space-y-2 max-h-[70vh] overflow-y-auto">
+          <div className="app-shell w-full py-4 space-y-2 max-h-[70vh] overflow-y-auto">
             {/* Home Link (Red) */}
             <a
               href="/"
-              className={`flex items-center gap-3 px-4 py-3 text-gray-700 hover:bg-gradient-to-r hover:from-red-50 hover:to-transparent rounded-xl transition-all group`}
+              className="flex items-center gap-3 px-4 py-3 text-gray-700 hover:bg-gradient-to-r hover:from-red-50 hover:to-transparent rounded-xl transition-all group"
               onClick={() => setMobileMenuOpen(false)}
             >
               <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-gray-100 to-gray-200 flex items-center justify-center group-hover:from-red-100 group-hover:to-red-200 transition-all">
-                <Home className={`w-5 h-5 text-gray-600 group-hover:${COLOR_TEXT_ACTIVE}`} />
+                <Home className="w-5 h-5 text-gray-600 group-hover:text-red-600" />
               </div>
-              <span className={`font-semibold text-gray-800 group-hover:${COLOR_TEXT_ACTIVE} transition-colors`}>Home</span>
+              <span className="font-semibold text-gray-800 group-hover:text-red-600 transition-colors">Home</span>
             </a>
             
             {sections.map((section) => {
@@ -187,14 +186,14 @@ const Header = () => {
                         <a
                           key={idx}
                           href={topic.url}
-                          className={`flex items-start gap-3 px-4 py-3 text-sm text-gray-600 group-hover:text-red-600 hover:bg-white transition-all border-b border-gray-100 last:border-b-0 group`}
+                          className="flex items-start gap-3 px-4 py-3 text-sm text-gray-600 group-hover:text-red-600 hover:bg-white transition-all border-b border-gray-100 last:border-b-0 group"
                           onClick={() => setMobileMenuOpen(false)}
                         >
                           {/* Topic Index Circle (Red) */}
-                          <span className={`w-7 h-7 flex items-center justify-center rounded-lg bg-white text-xs font-bold text-gray-500 group-hover:bg-gradient-to-br group-hover:${COLOR_PRIMARY_GRADIENT} group-hover:text-white transition-all shadow-sm flex-shrink-0`}>
+                          <span className="w-7 h-7 flex items-center justify-center rounded-lg bg-white text-xs font-bold text-gray-500 group-hover:bg-gradient-to-br group-hover:from-red-600 group-hover:to-red-700 group-hover:text-white transition-all shadow-sm flex-shrink-0">
                             {idx + 1}
                           </span>
-                          <span className={`pt-1 font-medium group-hover:${COLOR_TEXT_ACTIVE}`}>{topic.topic}</span>
+                          <span className="pt-1 font-medium group-hover:text-red-600">{topic.topic}</span>
                         </a>
                       ))}
                     </div>

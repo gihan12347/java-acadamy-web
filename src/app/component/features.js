@@ -50,29 +50,29 @@ const FeaturedTutorials = () => {
   ];
 
   return (
-    <section className="bg-white py-12 md:py-16">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section className="bg-white py-10 sm:py-12 md:py-16">
+      <div className="app-shell">
         {/* Section Header */}
-        <div className="text-center mb-12">
-          <div className="inline-flex items-center gap-2 bg-gray-50 px-6 py-3 rounded-full shadow-lg border-2 border-red-200 mb-6">
+        <div className="text-center mb-10 sm:mb-12">
+          <div className="inline-flex items-center gap-2 bg-gray-50 px-4 sm:px-6 py-2.5 sm:py-3 rounded-full shadow-md border border-red-200 mb-6">
             <Sparkles className="w-5 h-5 text-red-500" />
             <span className="font-bold text-red-600 tracking-wider">POPULAR TUTORIALS</span>
           </div>
           
-          <h2 className="text-5xl font-black text-gray-900 mb-4 leading-tight">
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-gray-900 mb-4 leading-tight">
             Featured{' '}
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-red-500 to-red-600">
               Tutorials
             </span>
           </h2>
           
-          <p className="text-xl text-gray-600 max-w-2xl mx-auto">
+          <p className="text-base sm:text-lg lg:text-xl text-gray-600 max-w-2xl mx-auto leading-relaxed">
             Start with these hands-on tutorials and build real Java applications from scratch
           </p>
         </div>
 
         {/* Tutorials Grid */}
-        <div className="grid lg:grid-cols-2 gap-8">
+        <div className="grid lg:grid-cols-2 gap-5 sm:gap-6 lg:gap-8">
           {tutorials.map((tutorial) => {
             const Icon = tutorial.icon;
             
@@ -83,7 +83,7 @@ const FeaturedTutorials = () => {
             return (
               <div
                 key={tutorial.id}
-                className="group relative bg-white rounded-3xl p-8 shadow-xl hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 cursor-pointer overflow-hidden border border-gray-100"
+                className="group relative h-full bg-white rounded-3xl p-6 sm:p-7 shadow-lg hover:shadow-2xl hover:-translate-y-1.5 transition-all duration-300 cursor-pointer overflow-hidden border border-gray-100"
               >
                 {/* Decorative corner gradient */}
                 <div className={`absolute top-0 right-0 w-40 h-40 ${
@@ -95,14 +95,14 @@ const FeaturedTutorials = () => {
                 {/* Content */}
                 <div className="relative z-10">
                   {/* Top Section */}
-                  <div className="flex items-start gap-5 mb-6">
+                  <div className="flex items-start gap-4 sm:gap-5 mb-5 sm:mb-6">
                     {/* Icon Box */}
-                    <div className={`flex-shrink-0 w-16 h-16 rounded-2xl flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform duration-500 ${
+                    <div className={`flex-shrink-0 w-12 h-12 sm:w-16 sm:h-16 rounded-2xl flex items-center justify-center shadow-md group-hover:scale-105 transition-transform duration-500 ${
                       isRed
                         ? 'bg-gradient-to-br from-red-500 to-red-700' // Changed from orange/blue
                         : 'bg-gradient-to-br from-gray-500 to-gray-700'
                     }`}>
-                      <Icon className="w-8 h-8 text-white" strokeWidth={2.5} />
+                      <Icon className="w-6 h-6 sm:w-8 sm:h-8 text-white" strokeWidth={2.5} />
                     </div>
                     
                     {/* Title & Subtitle */}
@@ -116,7 +116,7 @@ const FeaturedTutorials = () => {
                           {tutorial.level}
                         </span>
                       </div>
-                      <h3 className="text-2xl font-bold text-gray-900 mb-1">
+                      <h3 className="text-xl sm:text-2xl font-bold text-gray-900 mb-1">
                         {tutorial.title}
                       </h3>
                       <p className={`text-sm font-semibold ${
@@ -128,12 +128,12 @@ const FeaturedTutorials = () => {
                   </div>
 
                   {/* Description */}
-                  <p className="text-gray-600 text-base leading-relaxed mb-8">
+                  <p className="text-gray-600 text-sm sm:text-base leading-relaxed mb-6 sm:mb-8 min-h-[84px] sm:min-h-[96px]">
                     {tutorial.description}
                   </p>
 
                   {/* Bottom Section */}
-                  <div className="flex items-center justify-between pt-4 border-t-2 border-gray-100">
+                  <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pt-4 border-t-2 border-gray-100">
                     {/* Duration */}
                     <div className="flex items-center gap-2 text-gray-500">
                       <Clock className="w-4 h-4" />
@@ -144,7 +144,8 @@ const FeaturedTutorials = () => {
                     <a
                       href={tutorial.link} 
                       target='_blank'
-                      className={`flex items-center gap-2 px-6 py-3 rounded-xl font-bold text-white shadow-lg group-hover:shadow-xl transition-all ${
+                      rel="noopener noreferrer"
+                      className={`inline-flex items-center justify-center gap-2 px-5 sm:px-6 py-3 rounded-xl font-bold text-white shadow-lg group-hover:shadow-xl transition-all w-full sm:w-auto ${
                           isRed
                           ? 'bg-gradient-to-r from-red-600 to-red-700 hover:from-red-700 hover:to-red-800' // Changed from orange/blue
                           : 'bg-gradient-to-r from-gray-500 to-gray-600 hover:from-gray-600 hover:to-gray-700'
