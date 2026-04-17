@@ -96,7 +96,7 @@ export default function MicroservicesIntroductionGuide() {
             <h2 className="text-xl sm:text-2xl font-bold text-red-700 mb-6 text-center">Microservices Architecture Diagram</h2>
             <figure className="border-2 border-red-600 rounded-lg overflow-hidden shadow-xl bg-gray-50">
               <img 
-                src="images/microservice.png"
+                src="/images/microservice.png"
                 alt="Microservices architecture diagram showing services and API communication"
                 className="w-full h-auto"
               />

@@ -9,7 +9,7 @@ export default function IntroJavaPage() {
   const section = sections.find((s) => s.id === "core-java");
 
   return (
-    <div className="flex flex-col h-screen bg-white">
+    <div className="flex flex-col min-h-screen bg-slate-50">
       <Header />
 
       <div className="flex flex-1 overflow-hidden">
@@ -22,7 +22,7 @@ export default function IntroJavaPage() {
 
         <main
           id="scrollArea"
-          className="flex-1 p-4 sm:p-6 md:p-8 lg:p-10 xl:p-12 overflow-y-auto"
+          className="flex-1 p-3 sm:p-5 md:p-6 lg:p-8 xl:p-10 overflow-y-auto"
         >
           <JavaDataTypes/>
         </main>
