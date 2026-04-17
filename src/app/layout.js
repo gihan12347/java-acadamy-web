@@ -4,9 +4,10 @@ import Script from 'next/script'
 
 const inter = Inter({ subsets: ['latin'], display: 'swap' })
 const siteUrl = 'https://javaacademyhub.com'
-const defaultTitle = 'Java Tutorial for Beginners | Java Academy Hub'
+const defaultTitle =
+  'Learn Java Online Free | Java Tutorial for Beginners | Java Academy Hub'
 const defaultDescription =
-  'Java tutorial for beginners with step-by-step lessons. Learn Core Java, OOP, Spring Boot, and Microservices for learners in the USA, Europe, and Australia.'
+  'Learn Java online with a free Java programming course for beginners. Follow step-by-step lessons in Core Java, OOP, Spring Boot, and Microservices.'
 
 export const metadata = {
   title: {
@@ -18,9 +19,11 @@ export const metadata = {
   metadataBase: new URL(siteUrl),
   keywords: [
     'java tutorial',
-    'java tutorial for beginners',
-    'java tutorial for beginers',
     'learn java online',
+    'java tutorial for beginners',
+    'java programming course free',
+    'free java programming course',
+    'java tutorial for beginers',
     'java tutorials for beginners',
     'core java tutorial for beginners',
     'core java tutorial',

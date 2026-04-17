@@ -2,6 +2,7 @@ const siteUrl = 'https://javaacademyhub.com'
 
 const routes = [
   '',
+  '/complete-java-guide',
   '/module',
   '/intro-java',
   '/java-variables-data-types',
