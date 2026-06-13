@@ -16,7 +16,7 @@ export default function GradleLifecyclePage() {
         <div className="hidden md:block">
           <LeftPanel
             section={section}
-            selectedTopicId='3'
+            selectedTopicId='2'
           />
         </div>
 

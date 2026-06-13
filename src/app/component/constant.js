@@ -148,6 +148,8 @@ export const sections = [
     url: "/apis",
     icon: Layers,
     color: "from-teal-500 to-teal-600",
+    description:
+      "Build RESTful APIs and web services with Spring Boot, JSON, and OpenAPI",
     topics: [
       { topic: "Introduction to APIs", url: "/api-introduction" },
       { topic: "REST Principles", url: "/rest-principles" },

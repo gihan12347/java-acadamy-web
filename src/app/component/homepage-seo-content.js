@@ -50,10 +50,10 @@ const topicClusters = [
     description:
       "Learn servlet architecture, request/response lifecycle, and session handling for Java web apps.",
     links: [
-      { label: "Servlet Learning Path", href: "/module?section_id=servlets" },
-      { label: "Build Your First Java Web App", href: "/module?section_id=servlets" },
-      { label: "Microservices Introduction", href: "/microservices-introduction" },
-      { label: "Monolith vs Microservices", href: "/monolith-vs-microservices" },
+      { label: "Introduction to Servlets", href: "/servlets-introduction" },
+      { label: "Servlet Lifecycle", href: "/servlet-lifecycle" },
+      { label: "Session Management", href: "/servlet-session-management" },
+      { label: "All Servlets Topics", href: "/servlets" },
     ],
   },
   {
@@ -61,10 +61,21 @@ const topicClusters = [
     description:
       "Connect Java applications with databases using JDBC drivers, statements, and transaction management.",
     links: [
-      { label: "JDBC Learning Path", href: "/module?section_id=jdbc" },
-      { label: "Java to MySQL Tutorial", href: "/module?section_id=jdbc" },
-      { label: "Collections Framework", href: "/java-collections-framework" },
-      { label: "Exception Handling", href: "/java-exception-handling" },
+      { label: "Introduction to JDBC", href: "/jdbc-introduction" },
+      { label: "PreparedStatement", href: "/jdbc-preparedstatement" },
+      { label: "Connection Pooling", href: "/jdbc-connection-pooling" },
+      { label: "All JDBC Topics", href: "/jdbc" },
+    ],
+  },
+  {
+    title: "REST APIs and Web Services",
+    description:
+      "Build production-ready REST APIs with Spring Boot, JSON processing, OpenAPI docs, and automated testing.",
+    links: [
+      { label: "Introduction to APIs", href: "/api-introduction" },
+      { label: "REST Principles", href: "/rest-principles" },
+      { label: "Spring Boot REST", href: "/spring-boot-rest" },
+      { label: "All API Topics", href: "/apis" },
     ],
   },
 ];

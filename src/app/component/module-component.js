@@ -1,5 +1,6 @@
 import { sections } from "../component/constant.js";
 import Link from "next/link";
+import { ChevronRight } from "lucide-react";
 
 export default function ModuleComponent({ searchParams }) {
   const sectionId = searchParams.section_id;
@@ -72,23 +73,11 @@ export default function ModuleComponent({ searchParams }) {
               {/* Start Learning Button - Desktop */}
               <div className="hidden sm:block">
                 <Link
-                  href={`/${sectionId}?section_topic=${0}`}
+                  href={section.topics[0]?.url || section.url}
                   className="bg-gradient-to-r from-red-500 to-red-600 text-white px-6 py-3 rounded-xl font-semibold shadow-lg flex items-center gap-2 hover:shadow-xl transition-shadow"
                 >
                   <span>Start Learning</span>
-                  <svg
-                    className="w-5 h-5"
-                    fill="none"
-                    stroke="currentColor"
-                    viewBox="0 0 24 24"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth={2}
-                      d="M13 7l5 5m0 0l-5 5m5-5H6"
-                    />
-                  </svg>
+                  <ChevronRight className="w-5 h-5" />
                 </Link>
               </div>
             </div>
@@ -117,22 +106,13 @@ export default function ModuleComponent({ searchParams }) {
 
             {/* Start Learning Button - Mobile */}
             <div className="sm:hidden mt-6">
-              <button className="w-full bg-gradient-to-r from-red-500 to-red-600 text-white px-6 py-3 rounded-xl font-semibold shadow-lg flex items-center justify-center gap-2 active:scale-[0.99]">
+              <Link
+                href={section.topics[0]?.url || section.url}
+                className="w-full bg-gradient-to-r from-red-500 to-red-600 text-white px-6 py-3 rounded-xl font-semibold shadow-lg flex items-center justify-center gap-2 active:scale-[0.99]"
+              >
                 <span>Start Learning</span>
-                <svg
-                  className="w-5 h-5"
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="M13 7l5 5m0 0l-5 5m5-5H6"
-                  />
-                </svg>
-              </button>
+                <ChevronRight className="w-5 h-5" />
+              </Link>
             </div>
           </div>
         </div>

@@ -16,7 +16,7 @@ export default function JavaAccessModifiersPage() {
         <div className="hidden md:block">
           <LeftPanel
             section={section}
-            selectedTopicId='6'
+            selectedTopicId='7'
           />
         </div>
 

@@ -1,6 +1,7 @@
 import { Inter } from 'next/font/google'
 import './globals.css'
 import Script from 'next/script'
+import { ADSENSE_CLIENT } from './component/shared/adsense-config.js'
 
 const inter = Inter({ subsets: ['latin'], display: 'swap' })
 const siteUrl = 'https://javaacademyhub.com'
@@ -117,6 +118,7 @@ export default function RootLayout({ children }) {
         <meta name="language" content="English" />
         <meta httpEquiv="content-language" content="en-US, en-GB, en-AU" />
         <meta name="distribution" content="global" />
+        <meta name="google-adsense-account" content={ADSENSE_CLIENT} />
 
         {/* Optional: International Targeting */}
         <link rel="alternate" href="https://javaacademyhub.com" hrefLang="en-us" />
@@ -153,6 +155,14 @@ export default function RootLayout({ children }) {
             });
           `}
         </Script>
+
+        {/* Google AdSense Auto Ads — runs on every page via root layout */}
+        <Script
+          id="google-adsense"
+          strategy="afterInteractive"
+          src={`https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=${ADSENSE_CLIENT}`}
+          crossOrigin="anonymous"
+        />
       </head>
 
       <body className={inter.className}>

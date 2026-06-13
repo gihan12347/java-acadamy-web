@@ -1,46 +1,31 @@
-const siteUrl = 'https://javaacademyhub.com'
+import { sections } from "./component/constant.js";
 
-const routes = [
-  '',
-  '/complete-java-guide',
-  '/module',
-  '/intro-java',
-  '/java-variables-data-types',
-  '/java-control-flow',
-  '/java-classes-objects',
-  '/java-oop',
-  '/java-access-modifiers',
-  '/java-class-types',
-  '/java-vertual-machine',
-  '/java-exception-handling',
-  '/java-multithreading',
-  '/java-collections-framework',
-  '/java-collections-framework/list',
-  '/java-collections-framework/set',
-  '/java-collections-framework/map',
-  '/java-collections-framework/queue',
-  '/build-tools-introduction',
-  '/maven-basics',
-  '/maven-lifecycle',
-  '/gradle-basics',
-  '/gradle-life-cycle-and-tasks',
-  '/gradle-build-file',
-  '/build-tools-dependency-management',
-  '/build-tools-jar-war',
-  '/microservices-introduction',
-  '/monolith-vs-microservices',
-  '/microservices-communication',
-  '/microservices-spring-cloud',
-  '/spring-boot-microservices',
-]
+const siteUrl = "https://javaacademyhub.com";
+
+const extraRoutes = [
+  "",
+  "/complete-java-guide",
+  "/module",
+  "/java-collections-framework/list",
+  "/java-collections-framework/set",
+  "/java-collections-framework/map",
+  "/java-collections-framework/queue",
+];
 
 export default function sitemap() {
-  const now = new Date()
+  const now = new Date();
+
+  const topicRoutes = sections.flatMap((section) => [
+    section.url,
+    ...section.topics.map((t) => t.url),
+  ]);
+
+  const routes = [...new Set([...extraRoutes, ...topicRoutes])];
 
   return routes.map((route) => ({
     url: `${siteUrl}${route}`,
     lastModified: now,
-    changeFrequency: route === '' ? 'weekly' : 'monthly',
-    priority: route === '' ? 1 : 0.8,
-  }))
+    changeFrequency: route === "" ? "weekly" : "monthly",
+    priority: route === "" ? 1 : route.startsWith("/module") ? 0.7 : 0.8,
+  }));
 }

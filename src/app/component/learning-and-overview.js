@@ -80,7 +80,7 @@ const LearningOverview = () => {
                 </p>
 
                 {/* Arrow */}
-                <Link href={`/module?section_id=${section.id}`}>
+                <Link href={section.url || `/module?section_id=${section.id}`}>
                   <div className="flex items-center justify-between">
                     <span
                       // Start Learning text is red
