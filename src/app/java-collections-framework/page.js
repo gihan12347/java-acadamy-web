@@ -16,7 +16,7 @@ export default function JavaCollectionFrameworkPage() {
         <div className="hidden md:block">
           <LeftPanel
             section={section}
-            selectedTopicId='10'
+            selectedTopicId='11'
           />
         </div>
 

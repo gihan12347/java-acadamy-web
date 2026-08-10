@@ -16,7 +16,7 @@ export default function SetImplementationsPage() {
         <div className="hidden md:block">
           <LeftPanel
             section={section}
-            selectedTopicId='10'
+            selectedTopicId='11'
           />
         </div>
 

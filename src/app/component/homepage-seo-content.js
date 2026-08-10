@@ -26,12 +26,12 @@ const topicClusters = [
   {
     title: "Java Collections and Concurrency",
     description:
-      "Learn collections, exception handling, and multithreading to write reliable Java programs.",
+      "Learn collections, exception handling, multithreading, and synchronization to write reliable Java programs.",
     links: [
       { label: "Exception Handling", href: "/java-exception-handling" },
       { label: "Multithreading", href: "/java-multithreading" },
+      { label: "Synchronization", href: "/java-synchronization" },
       { label: "Collections Framework", href: "/java-collections-framework" },
-      { label: "Map in Java", href: "/java-collections-framework/map" },
     ],
   },
   {

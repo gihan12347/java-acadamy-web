@@ -20,6 +20,7 @@ export const sections = [
       { topic: "Access Modifiers", url: "/java-access-modifiers" },
       { topic: "Exception Handling", url: "/java-exception-handling" },
       { topic: "Multithreading", url: "/java-multithreading" },
+      { topic: "Synchronization", url: "/java-synchronization" },
       { topic: "Collections Framework", url: "/java-collections-framework" }
     ],
   },
